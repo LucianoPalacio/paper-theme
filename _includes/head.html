@@ -1,0 +1,31 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  {% if page.title == "home" %}
+    {{ site.title }}{% if site.description %} | {{ site.description }}{% endif %}
+  {% else %}
+    {{ page.title }} | {{ site.title }}
+  {% endif %}
+</title>
+
+<meta property="og:title" content="Your title">
+
+<meta name="author" content="Test Author">
+
+<meta property="og:locale" content="en_US">
+
+<meta name="description" content="Your title - Write an awesome description for your new site here.">
+
+<meta property="og:description" content="Your title - Write an awesome description for your new site here.">
+
+<meta property="og:site_name" content="Your title">
+
+{% if site.keywords or page.tags %}
+<meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ','}}{% else %}{{ site.keywords | join: ',' }}{% endif %}" />
+{% endif %}
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" />
